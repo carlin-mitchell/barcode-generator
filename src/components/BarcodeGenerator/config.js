@@ -17,4 +17,7 @@ export const barcodeConfig = {
     max: 100,
     step: 1,
   },
+  fontDisplay: {
+    starting: true,
+  },
 };

@@ -7,6 +7,7 @@ import { generateBarcode, getBarcodeWidthInput } from "./logic";
 import BarcodeWidthInput from "./BarcodeWIdthInput";
 import BarcodeHeightInput from "./BarcodeHeightInput";
 import BarcodeFontSizeInput from "./BarcodeFontSizeInput";
+import BarcodeFontDisplayInput from "./BarcodeFontDisplayInput";
 
 // LOGIC IMPORTS
 //
@@ -27,6 +28,7 @@ const BarcodeForm = () => {
       BarcodeWidthInput(),
       BarcodeHeightInput(),
       BarcodeFontSizeInput(),
+      BarcodeFontDisplayInput(),
     ]
   );
   return parentElement;

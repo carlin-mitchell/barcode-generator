@@ -11,6 +11,7 @@ import {
   barcodeHeightInputId,
 } from "./BarcodeHeightInput";
 import { barcodeFontSizeInputId } from "./BarcodeFontSizeInput";
+import { barcodeFontDisplayInputId } from "./BarcodeFontDisplayInput";
 
 export function generateBarcode(options) {
   options = options ? options : {};
@@ -21,11 +22,14 @@ export function generateBarcode(options) {
   const width = getInputValue(getBarcodeWidthInput());
   const height = getInputValue(getBarcodeHeightInput());
   const fontSize = getInputValue(getBarcodeFontSizeInput());
+  const displayValue = getInputValue(getBarcodeFontDisplayInput());
+  console.log(displayValue);
   JsBarcode("#barcode", content, {
     ...options,
     width,
     height,
     fontSize,
+    displayValue,
   });
 }
 // ################# TEXT INPUT #################
@@ -56,4 +60,9 @@ export function getBarcodeFontSizeInput() {
 }
 export function getBarcodeFontSizeDisplay() {
   return document.getElementById(barcodeFontSizeInputId);
+}
+
+// ################ FONT SIZE INPUT ###############
+export function getBarcodeFontDisplayInput() {
+  return document.getElementById(barcodeFontDisplayInputId);
 }
