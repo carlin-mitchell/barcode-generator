@@ -1,6 +1,5 @@
 // COMPONENT IMPORTS
 import { Div, Img } from "../_elements/Elements";
-import { getBarcode } from "./ui";
 
 // LOGIC IMPORTS
 //
@@ -9,7 +8,7 @@ import { getBarcode } from "./ui";
 // function someMethod() {
 //   //
 // }
-setTimeout(getBarcode({ message: "Hello World!" }), 0);
+
 const Barcode = () => {
   //
 

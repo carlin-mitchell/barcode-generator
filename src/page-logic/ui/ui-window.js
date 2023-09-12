@@ -7,6 +7,7 @@ import {
   getBarcodeWidthSpan,
   getBarcodeWidthInput,
 } from "../../components/BarcodeGenerator/logic";
+import { updateBarcodeWidthDisplay } from "../../components/BarcodeGenerator/ui";
 
 const breakPoints = {
   xs: 0,
@@ -21,9 +22,7 @@ export function applyWindowListeners() {
     //
   });
   window.onload = () => {
-    getBarcodeWidthSpan().innerText = getInputValue(getBarcodeWidthInput());
-    generateBarcode(getInputValue(getBarcodeTextInput()), {
-      width: getInputValue(getBarcodeWidthInput()),
-    });
+    updateBarcodeWidthDisplay(getInputValue(getBarcodeWidthInput()));
+    generateBarcode();
   };
 }

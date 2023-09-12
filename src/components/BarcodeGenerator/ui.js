@@ -1,6 +1,6 @@
-import JsBarcode from "jsbarcode";
+import { getBarcodeWidthSpan } from "./logic";
 
-export function getBarcode(props) {
-  const { message } = props;
-  console.log(message);
+export function updateBarcodeWidthDisplay(value) {
+  const barcodeWidthDisplay = getBarcodeWidthSpan();
+  barcodeWidthDisplay.innerText = value;
 }

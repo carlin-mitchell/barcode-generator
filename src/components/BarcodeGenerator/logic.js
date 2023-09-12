@@ -5,12 +5,16 @@ import {
   barcodeWidthInputId,
   barcodeWidthLabelSpanId,
 } from "./BarcodeWIdthInput";
+import { getInputValue } from "../../utils";
 
-export function generateBarcode(content, options) {
-  content = content ? content : "";
+export function generateBarcode(options) {
   options = options ? options : {};
+  const content = getInputValue(getBarcodeTextInput())
+    ? getInputValue(getBarcodeTextInput())
+    : "<NONE>";
 
-  JsBarcode("#barcode", content, options);
+  const width = getInputValue(getBarcodeWidthInput());
+  JsBarcode("#barcode", content, { ...options, width });
 }
 
 export function getBarcodeTextInput() {

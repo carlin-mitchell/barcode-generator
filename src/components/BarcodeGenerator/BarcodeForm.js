@@ -3,7 +3,11 @@ import { Form } from "../_elements/Elements";
 import GenerateButton from "./GenerateButton";
 import BarcodeTextInput from "./BarcodeTextInput";
 import { getInputValue } from "../../utils";
-import { getBarcodeTextInput, generateBarcode } from "./logic";
+import {
+  getBarcodeTextInput,
+  generateBarcode,
+  getBarcodeWidthInput,
+} from "./logic";
 import BarcodeWidthInput from "./BarcodeWIdthInput";
 
 // LOGIC IMPORTS
@@ -12,10 +16,9 @@ import BarcodeWidthInput from "./BarcodeWIdthInput";
 // COMPONENT METHODS
 function handleSubmit(e) {
   e.preventDefault();
-  const barcodeContent = getInputValue(getBarcodeTextInput());
-  if (barcodeContent) {
-    generateBarcode(barcodeContent);
-  }
+  const width = getInputValue(getBarcodeWidthInput());
+
+  generateBarcode({ width });
 }
 
 const BarcodeForm = () => {
@@ -30,11 +33,7 @@ const BarcodeForm = () => {
       },
     },
     // add child elements to the array below
-    [
-      BarcodeTextInput({ value: "Hello World" }),
-      BarcodeWidthInput(),
-      GenerateButton(),
-    ]
+    [BarcodeTextInput({ value: "Hello World" }), BarcodeWidthInput()]
   );
   return parentElement;
 };
