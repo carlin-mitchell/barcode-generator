@@ -1,3 +1,5 @@
+import JsBarcode from "jsbarcode";
+
 import { debounce } from "../../utils";
 
 const breakPoints = {
@@ -12,4 +14,7 @@ export function applyWindowListeners() {
   window.onresize = debounce(function (e) {
     //
   });
+  window.onload = () => {
+    JsBarcode("#barcode", "Hello World");
+  };
 }

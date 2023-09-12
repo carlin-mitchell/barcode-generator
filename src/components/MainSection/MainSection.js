@@ -1,8 +1,6 @@
 // COMPONENT IMPORTS
 import { generateTestContentArr } from "../../utils";
-import CustomIconsDisplay from "../_custom-components/CustomIconsDisplay/CustomIconsDisplay";
-import ImageCarousel from "../_custom-components/ImageCarousel/ImageCarousel";
-import ValidatedForm from "../_custom-components/ValidatedForm/ValidatedForm";
+import BarcodeGenerator from "../BarcodeGenerator/BarcodeGenerator";
 import { Main, Div } from "../_elements/Elements";
 
 // LOGIC IMPORTS
@@ -21,7 +19,7 @@ const MainSection = () => {
       className: "" + " " + otherClasses,
     },
     // add child elements to the array below
-    []
+    [BarcodeGenerator()]
   );
   return main;
 };
