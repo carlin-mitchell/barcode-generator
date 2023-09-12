@@ -17,7 +17,7 @@ const BarcodeGenerator = () => {
   //
 
   const parentElement = Div(
-    { innerText: ``, className: `` },
+    { innerText: ``, className: `barcode-generator` },
     // add child elements to the array below
     [BarcodeForm(), Barcode()]
   );

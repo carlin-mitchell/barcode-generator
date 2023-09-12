@@ -13,6 +13,8 @@ import {
 import { barcodeFontSizeInputId } from "./BarcodeFontSizeInput";
 import { barcodeFontDisplayInputId } from "./BarcodeFontDisplayInput";
 
+import { barcodeConfig } from "./config";
+
 export function generateBarcode(options) {
   options = options ? options : {};
   const content = getInputValue(getBarcodeTextInput())
@@ -22,14 +24,15 @@ export function generateBarcode(options) {
   const width = getInputValue(getBarcodeWidthInput());
   const height = getInputValue(getBarcodeHeightInput());
   const fontSize = getInputValue(getBarcodeFontSizeInput());
-  const displayValue = getInputValue(getBarcodeFontDisplayInput());
-  console.log(displayValue);
+  const displayValue = getBarcodeFontDisplayInput().checked;
+  const margin = barcodeConfig.margin.starting;
   JsBarcode("#barcode", content, {
     ...options,
     width,
     height,
     fontSize,
     displayValue,
+    margin,
   });
 }
 // ################# TEXT INPUT #################

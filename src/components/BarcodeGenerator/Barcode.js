@@ -13,7 +13,7 @@ const Barcode = () => {
   //
 
   const parentElement = Div(
-    { innerText: ``, className: `` },
+    { innerText: ``, className: `barcode-container` },
     // add child elements to the array below
     [Img({ id: "barcode" })]
   );

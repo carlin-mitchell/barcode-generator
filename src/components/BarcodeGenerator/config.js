@@ -20,4 +20,7 @@ export const barcodeConfig = {
   fontDisplay: {
     starting: true,
   },
+  margin: {
+    starting: 0,
+  },
 };
