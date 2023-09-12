@@ -1,0 +1,120 @@
+@use "../../styles/vars" as *;
+@use "../../styles/breakpoints" as screen;
+
+.nav-wrapper {
+  width: 100%;
+  display: grid;
+  grid-template-rows: auto auto;
+}
+
+.mobile-menu {
+  .nav-links {
+    flex-direction: column;
+  }
+  div {
+    width: 100%;
+    margin: 0;
+  }
+  visibility: hidden;
+}
+
+.menu-down {
+  animation: 0.75s ease-in-out forwards mobile-menu-down;
+}
+
+.menu-up {
+  animation: 0.75s ease-in forwards mobile-menu-up;
+}
+
+@keyframes mobile-menu-down {
+  from {
+    opacity: 0;
+    visibility: hidden;
+  }
+  to {
+    visibility: visible;
+    opacity: 1;
+  }
+}
+
+@keyframes mobile-menu-up {
+  from {
+    visibility: visible;
+    opacity: 1;
+  }
+  to {
+    visibility: hidden;
+    opacity: 0;
+  }
+}
+
+.navbar {
+  z-index: 2;
+  .nav-links {
+    justify-content: start;
+    @include screen.xs {
+      display: none;
+    }
+    @include screen.sm {
+      display: none;
+    }
+    @include screen.md {
+      display: flex;
+    }
+  }
+  li:last-child {
+    margin-right: 0;
+  }
+  .menu-button {
+    @include screen.sm {
+      display: initial;
+    }
+    @include screen.md {
+      display: none;
+    }
+  }
+  * {
+    font-weight: bold;
+  }
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+  .top-link {
+    font-size: $base-font-size;
+    position: relative;
+    display: inline-block;
+  }
+
+  .top-link::after {
+    content: "+";
+    position: absolute;
+    right: $base-margin * 0.75;
+  }
+
+  .dropdown-content {
+    visibility: hidden;
+    position: absolute;
+    left: 0;
+    min-width: max-content;
+    z-index: 1;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+    a {
+      display: block;
+      padding: $base-padding;
+    }
+  }
+}
+
+.dropdown:hover {
+  .top-link::after {
+    content: "";
+    margin-left: $base-margin * 0.5;
+  }
+  .dropdown-content {
+    visibility: visible;
+    opacity: 1;
+  }
+}

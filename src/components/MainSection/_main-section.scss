@@ -1,0 +1,19 @@
+@use "../../styles/vars" as *;
+
+#main-section {
+  grid-area: main-section;
+  height: 100%;
+  padding: $padding-2;
+  display: grid;
+  gap: $margin-3;
+}
+
+.carousel-row {
+  display: grid;
+  justify-content: center;
+}
+
+.form-row {
+  display: grid;
+  justify-content: center;
+}

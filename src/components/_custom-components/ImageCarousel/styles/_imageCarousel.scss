@@ -1,0 +1,97 @@
+@use "../../../../styles/vars" as *;
+
+.carousel {
+  display: grid;
+  grid-template-columns: auto minmax(200px, 1fr) auto;
+  grid-template-rows: auto auto;
+  justify-self: center;
+  grid-template-areas:
+    "left_button track_container right_button"
+    ". nav .";
+
+  max-width: max-content;
+  .carousel-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    align-self: center;
+    height: 100%;
+    background-color: transparent;
+    border: none;
+    padding: $padding-1;
+    &.right {
+      grid-area: right_button;
+    }
+    &.left {
+      grid-area: left_button;
+    }
+  }
+  .carousel-nav {
+    grid-area: nav;
+    display: grid;
+    justify-content: center;
+    grid-template-columns: repeat(auto-fit, 1rem);
+    gap: 0.5rem;
+    button {
+      height: 0.75rem;
+      aspect-ratio: 1;
+      border-radius: 100%;
+      border: none;
+      cursor: pointer;
+      &.active {
+        background-color: darken(gray, 10%);
+      }
+    }
+  }
+  .carousel-track-container {
+    grid-area: track_container;
+  }
+  .carousel-track {
+    display: grid;
+    align-items: center;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+  }
+
+  .carousel-slide {
+    grid-row: 1/-1;
+    grid-column: 1/-1;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+    &.active {
+      opacity: 1;
+    }
+  }
+
+  .carousel-image {
+    max-height: 20rem;
+    width: 100%;
+  }
+
+  .carousel-play-pause-container {
+    display: grid;
+    & button {
+      grid-column: 1/-1;
+      grid-row: 1/-1;
+      display: grid;
+      display: none;
+      background-color: transparent;
+      &.visible {
+        display: grid;
+      }
+      &:hover {
+        background-color: transparent;
+      }
+      &:active {
+        background-color: transparent;
+      }
+      &:focus {
+        background-color: transparent;
+      }
+      & .icon {
+        align-self: start;
+      }
+    }
+  }
+}

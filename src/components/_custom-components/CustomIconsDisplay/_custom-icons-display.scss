@@ -1,0 +1,9 @@
+@use "../../../styles/vars" as *;
+
+.custom-icons-display {
+  .icon {
+    padding: $padding-2;
+    font-size: $font-size-xxxl;
+    color: black;
+  }
+}
