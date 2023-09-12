@@ -1,11 +1,10 @@
 @use "../../styles/vars" as *;
 
 #main-section {
+  padding: $padding-2;
   grid-area: main-section;
   height: 100%;
-  padding: $padding-2;
   display: grid;
-  gap: $margin-3;
 }
 
 .carousel-row {

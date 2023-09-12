@@ -22,7 +22,7 @@ const DynamicFooter = () => {
     },
     [
      CopyrightContainer(), 
-     TOPContainer(), 
+
      AttributionsContainer()
     ]
   );

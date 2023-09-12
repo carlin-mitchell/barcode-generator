@@ -1,5 +1,5 @@
-https://github.com/carlin-mitchell/boilerplate-webpack
+https://github.com/carlin-mitchell/barcode-generator
 
-# boilerplate-webpack
+# barcode-generator
 
-# [View Live Site](https://carlin-mitchell.github.io/boilerplate-webpack)
+# [View Live Site](https://carlin-mitchell.github.io/barcode-generator)

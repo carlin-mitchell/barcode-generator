@@ -21,11 +21,7 @@ const MainSection = () => {
       className: "" + " " + otherClasses,
     },
     // add child elements to the array below
-    [
-      Div({ className: "icons-row" }, [CustomIconsDisplay()]),
-      Div({ className: "carousel-row" }, [ImageCarousel()]),
-      Div({ className: "form-row" }, [ValidatedForm()]),
-    ]
+    []
   );
   return main;
 };

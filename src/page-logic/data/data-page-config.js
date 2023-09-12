@@ -1,3 +1,3 @@
 export const githubInfo = {
-  repoName: "boilerplate-webpack",
+  repoName: "barcode-generator",
 };

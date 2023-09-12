@@ -9,33 +9,29 @@
   padding-left: $padding-2;
   padding-right: $padding-2;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(3, auto);
-  grid-template-areas:
-    "copyright TOP attributions"
-    "copyright TOP attributions"
-    "copyright TOP attributions";
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-areas: "copyright attributions";
 
-  @include screen.lg {
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-areas:
-      "copyright TOP attributions"
-      "copyright TOP attributions"
-      "copyright TOP attributions";
-  }
+  // @include screen.lg {
+  //   grid-template-columns: repeat(2, 1fr);
+  //   grid-template-areas:
+  //     "copyright TOP attributions"
+  //     "copyright TOP attributions"
+  //     "copyright TOP attributions";
+  // }
   @include screen.md {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(1, auto);
     grid-template-areas:
-      "copyright TOP"
-      "attributions attributions"
-      "attributions attributions";
+      "copyright"
+      "attributions";
   }
-  @include screen.sm {
-    grid-template-areas:
-      "copyright copyright copyright"
-      "TOP TOP TOP"
-      "attributions attributions attributions";
-  }
+  // @include screen.sm {
+  //   grid-template-areas:
+  //     "copyright copyright copyright"
+  //     "TOP TOP TOP"
+  //     "attributions attributions attributions";
+  // }
 
   gap: $padding-1;
 

@@ -41,6 +41,8 @@
     "webpack-dev-server": "^4.15.0"
   },
   "dependencies": {
-    "glob": "^10.3.3"
+    "glob": "^10.3.3",
+    "jsbarcode": "^3.11.5",
+    "qrcode": "^1.5.3"
   }
 }

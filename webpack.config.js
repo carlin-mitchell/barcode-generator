@@ -48,7 +48,7 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      title: "XXXtitleXXX",
+      title: `Barcode Generator`,
     }),
     new MiniCssExtractPlugin(),
     new PurgeCSSPlugin({

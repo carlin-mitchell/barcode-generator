@@ -3,5 +3,7 @@ import { clickCarouselPlay } from "../../components/_custom-components/ImageCaro
 
 export function applyInitialState() {
   applyWindowListeners();
-  clickCarouselPlay();
+  if (document.querySelector(".carousel")) {
+    clickCarouselPlay();
+  }
 }
