@@ -1,5 +1,5 @@
 https://github.com/carlin-mitchell/barcode-generator
 
-# barcode-generato
+# barcode-generator
 
 # [View Live Site](https://carlin-mitchell.github.io/barcode-generator)
