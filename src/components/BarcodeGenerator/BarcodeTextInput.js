@@ -1,10 +1,7 @@
 // COMPONENT IMPORTS
 import { Div, Input } from "../_elements/Elements";
-import Barcode from "./Barcode";
-import BarcodeTextInput, { barcodeTextInputId } from "./BarcodeTextInput";
-import BarcodeForm from "./BarcodeForm";
+import { v4 as uuidv4 } from "uuid";
 
-import GenerateButton from "./GenerateButton";
 // LOGIC IMPORTS
 //
 
@@ -12,16 +9,17 @@ import GenerateButton from "./GenerateButton";
 // function someMethod() {
 //   //
 // }
+export const barcodeTextInputId = uuidv4();
 
-const BarcodeGenerator = () => {
-  //
+const BarcodeTextInput = (props) => {
+  const { value } = props;
 
   const parentElement = Div(
     { innerText: ``, className: `` },
     // add child elements to the array below
-    [BarcodeForm(), Barcode()]
+    [Input({ id: `${barcodeTextInputId}`, value })]
   );
   return parentElement;
 };
 
-export default BarcodeGenerator;
+export default BarcodeTextInput;

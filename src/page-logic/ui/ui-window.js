@@ -1,6 +1,12 @@
 import JsBarcode from "jsbarcode";
 
-import { debounce } from "../../utils";
+import { debounce, getInputValue } from "../../utils";
+import {
+  generateBarcode,
+  getBarcodeTextInput,
+  getBarcodeWidthSpan,
+  getBarcodeWidthInput,
+} from "../../components/BarcodeGenerator/logic";
 
 const breakPoints = {
   xs: 0,
@@ -15,6 +21,9 @@ export function applyWindowListeners() {
     //
   });
   window.onload = () => {
-    JsBarcode("#barcode", "Hello World");
+    getBarcodeWidthSpan().innerText = getInputValue(getBarcodeWidthInput());
+    generateBarcode(getInputValue(getBarcodeTextInput()), {
+      width: getInputValue(getBarcodeWidthInput()),
+    });
   };
 }
