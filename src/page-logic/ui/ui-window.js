@@ -3,9 +3,8 @@ import JsBarcode from "jsbarcode";
 import { debounce, getInputValue } from "../../utils";
 import {
   generateBarcode,
-  getBarcodeTextInput,
-  getBarcodeWidthSpan,
   getBarcodeWidthInput,
+  getBarcodeHeightInput,
 } from "../../components/BarcodeGenerator/logic";
 import { updateBarcodeWidthDisplay } from "../../components/BarcodeGenerator/ui";
 
