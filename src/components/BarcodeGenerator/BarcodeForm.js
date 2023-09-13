@@ -24,7 +24,7 @@ const BarcodeForm = () => {
     },
     // add child elements to the array below
     [
-      BarcodeTextInput({ value: "Hello World" }),
+      BarcodeTextInput(),
       BarcodeWidthInput(),
       BarcodeHeightInput(),
       BarcodeFontSizeInput(),

@@ -2,6 +2,7 @@
 import { Div, Input } from "../_elements/Elements";
 import { v4 as uuidv4 } from "uuid";
 import { generateBarcode } from "./logic";
+import { barcodeConfig } from "./config";
 
 // LOGIC IMPORTS
 //
@@ -12,9 +13,7 @@ function handleChange() {
 }
 export const barcodeTextInputId = uuidv4();
 
-const BarcodeTextInput = (props) => {
-  const { value } = props;
-
+const BarcodeTextInput = () => {
   const parentElement = Div(
     {
       innerText: ``,
@@ -24,7 +23,7 @@ const BarcodeTextInput = (props) => {
     [
       Input({
         id: `${barcodeTextInputId}`,
-        value,
+        value: barcodeConfig.textInput.starting,
         oninput() {
           handleChange();
         },

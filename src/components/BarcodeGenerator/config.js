@@ -21,6 +21,9 @@ export const barcodeConfig = {
     starting: true,
   },
   margin: {
-    starting: 0,
+    starting: 10,
+  },
+  textInput: {
+    starting: "This is only a test",
   },
 };

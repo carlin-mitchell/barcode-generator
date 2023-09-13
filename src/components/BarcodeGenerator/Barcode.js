@@ -1,6 +1,7 @@
 // COMPONENT IMPORTS
 import { Div, Img } from "../_elements/Elements";
 import { copyBarcode } from "./logic";
+import { updateCopyMessage } from "./ui";
 
 // LOGIC IMPORTS
 //
@@ -17,12 +18,20 @@ const Barcode = () => {
     {
       innerText: ``,
       className: `barcode-container`,
-      onclick() {
-        handleClick();
-      },
     },
     // add child elements to the array below
-    [Img({ id: "barcode" })]
+    [
+      Div(
+        {
+          className: "copy-message-container",
+          onclick() {
+            handleClick();
+          },
+        },
+        [Div({ innerText: "copy to clipboard" })]
+      ),
+      Img({ id: "barcode", className: "barcode-image" }),
+    ]
   );
   return parentElement;
 };

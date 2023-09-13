@@ -14,6 +14,7 @@ import { barcodeFontSizeInputId } from "./BarcodeFontSizeInput";
 import { barcodeFontDisplayInputId } from "./BarcodeFontDisplayInput";
 
 import { barcodeConfig } from "./config";
+import { updateCopyMessage } from "./ui";
 
 export function generateBarcode(options) {
   options = options ? options : {};
@@ -39,7 +40,12 @@ export async function copyBarcode(src) {
   const barcode = document.querySelector("#barcode");
   const data = await fetch(barcode.src);
   const blob = await data.blob();
-  await navigator.clipboard.write([new ClipboardItem({ "image/png": blob })]);
+  try {
+    await navigator.clipboard.write([new ClipboardItem({ "image/png": blob })]);
+    updateCopyMessage("copied!");
+  } catch (e) {
+    updateCopyMessage("there was an issue, try again");
+  }
 }
 
 // ################# TEXT INPUT #################
@@ -72,7 +78,12 @@ export function getBarcodeFontSizeDisplay() {
   return document.getElementById(barcodeFontSizeInputId);
 }
 
-// ################ FONT SIZE INPUT ###############
+// ############## FONT DISPLAY INPUT #############
 export function getBarcodeFontDisplayInput() {
   return document.getElementById(barcodeFontDisplayInputId);
+}
+
+// ############# COPY BARCODE MESSAGE ############
+export function getCopyBarcodeMessage() {
+  return document.querySelector(".copy-message-container > div");
 }
