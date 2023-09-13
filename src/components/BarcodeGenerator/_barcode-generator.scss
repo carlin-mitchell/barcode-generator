@@ -1,3 +1,5 @@
+$grid-gap: 5px;
+
 .barcode-container {
   border: 2px dotted gray;
   width: max-content;
@@ -41,4 +43,29 @@
       user-select: none;
     }
   }
+}
+
+.barcode-form {
+  display: grid;
+  gap: $grid-gap * 2;
+  max-width: 25rem;
+  input,
+  select {
+    padding: 3px;
+  }
+}
+
+.form-row-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: $grid-gap;
+}
+
+.form-row-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: $grid-gap;
+}
+
+.vertical-stack {
 }

@@ -30,7 +30,7 @@ export const barcodeConfig = {
     },
   },
   textInput: {
-    starting: "This is only a test",
+    starting: "Enter barcode message",
   },
   secondaryColor: {
     starting: "#000000",

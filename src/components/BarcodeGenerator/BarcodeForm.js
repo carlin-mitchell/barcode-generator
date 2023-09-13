@@ -1,5 +1,5 @@
 // COMPONENT IMPORTS
-import { Form } from "../_elements/Elements";
+import { Form, Div } from "../_elements/Elements";
 
 import BarcodeTextInput from "./BarcodeTextInput";
 import BarcodeWidthInput from "./BarcodeWIdthInput";
@@ -22,17 +22,23 @@ const BarcodeForm = () => {
   const parentElement = Form(
     {
       innerText: ``,
-      className: ``,
+      className: `barcode-form`,
     },
     // add child elements to the array below
     [
-      BarcodeTextInput(),
-      BarcodeWidthInput(),
-      BarcodeHeightInput(),
-      BarcodeFontSizeInput(),
-      BarcodeFontDisplayInput(),
-      BarcodePrimaryColorInput(),
-      BarcodeSecondaryColorInput(),
+      Div({ className: "form-row-2" }, [
+        BarcodeTextInput(),
+        BarcodeFontDisplayInput(),
+      ]),
+      Div({ className: "form-row-3" }, [
+        BarcodeWidthInput(),
+        BarcodeHeightInput(),
+        BarcodeFontSizeInput(),
+      ]),
+      Div({ className: "form-row-2" }, [
+        BarcodePrimaryColorInput(),
+        BarcodeSecondaryColorInput(),
+      ]),
     ]
   );
   return parentElement;
