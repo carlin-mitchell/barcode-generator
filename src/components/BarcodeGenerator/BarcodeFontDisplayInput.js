@@ -23,6 +23,7 @@ const BarcodeFontDisplayInput = () => {
 
   const parentElement = Div({}, [
     Label({
+      for: barcodeFontDisplayInputId,
       innerHTML: `Show text: `,
     }),
     Input(

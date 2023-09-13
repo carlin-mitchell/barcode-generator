@@ -24,6 +24,7 @@ const BarcodeHeightInput = () => {
 
   const parentElement = Div({}, [
     Label({
+      for: barcodeHeightInputId,
       innerHTML: `Height: `,
     }),
     Input(

@@ -1,13 +1,15 @@
 // COMPONENT IMPORTS
 import { Form } from "../_elements/Elements";
-import GenerateButton from "./GenerateButton";
+
 import BarcodeTextInput from "./BarcodeTextInput";
-import { getInputValue } from "../../utils";
-import { generateBarcode, getBarcodeWidthInput } from "./logic";
 import BarcodeWidthInput from "./BarcodeWIdthInput";
 import BarcodeHeightInput from "./BarcodeHeightInput";
 import BarcodeFontSizeInput from "./BarcodeFontSizeInput";
 import BarcodeFontDisplayInput from "./BarcodeFontDisplayInput";
+import {
+  BarcodePrimaryColorInput,
+  BarcodeSecondaryColorInput,
+} from "./BarcodeColorInputs";
 
 // LOGIC IMPORTS
 //
@@ -29,6 +31,8 @@ const BarcodeForm = () => {
       BarcodeHeightInput(),
       BarcodeFontSizeInput(),
       BarcodeFontDisplayInput(),
+      BarcodePrimaryColorInput(),
+      BarcodeSecondaryColorInput(),
     ]
   );
   return parentElement;

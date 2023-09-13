@@ -55,3 +55,7 @@ export function getRandomInt(min, max) {
 export function getInputValue(inputElement) {
   return inputElement.value;
 }
+
+export function setInputValue(inputElement, value) {
+  inputElement.value = value;
+}

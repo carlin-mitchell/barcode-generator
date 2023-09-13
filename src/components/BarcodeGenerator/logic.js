@@ -1,20 +1,18 @@
 import JsBarcode from "jsbarcode";
 
 import { barcodeTextInputId } from "./BarcodeTextInput";
-import {
-  barcodeWidthInputId,
-  barcodeWidthDisplayId,
-} from "./BarcodeWIdthInput";
+import { barcodeWidthInputId } from "./BarcodeWIdthInput";
 import { getInputValue } from "../../utils";
-import {
-  barcodeHeightDisplayId,
-  barcodeHeightInputId,
-} from "./BarcodeHeightInput";
+import { barcodeHeightInputId } from "./BarcodeHeightInput";
 import { barcodeFontSizeInputId } from "./BarcodeFontSizeInput";
 import { barcodeFontDisplayInputId } from "./BarcodeFontDisplayInput";
 
 import { barcodeConfig } from "./config";
 import { updateCopyMessage } from "./ui";
+import {
+  barcodePrimaryColorInputId,
+  barcodeSecondaryColorInputId,
+} from "./BarcodeColorInputs";
 
 export function generateBarcode(options) {
   options = options ? options : {};
@@ -26,7 +24,10 @@ export function generateBarcode(options) {
   const height = getInputValue(getBarcodeHeightInput());
   const fontSize = getInputValue(getBarcodeFontSizeInput());
   const displayValue = getBarcodeFontDisplayInput().checked;
-  const { left, right, top, bottom, margin } = barcodeConfig.margin.starting;
+  const { bottom, margin } = barcodeConfig.margin.starting;
+  const lineColor = getInputValue(getBarcodeSecondaryColorInput());
+  const background = getInputValue(getBarcodePrimaryColorInput());
+
   JsBarcode("#barcode", content, {
     ...options,
     width,
@@ -34,7 +35,9 @@ export function generateBarcode(options) {
     fontSize,
     displayValue,
     margin,
-    marginBottom: bottom,
+    marginBottom: displayValue ? bottom : 0,
+    lineColor,
+    background,
   });
 }
 export async function copyBarcode(src) {
@@ -59,23 +62,14 @@ export function getBarcodeTextInput() {
 export function getBarcodeWidthInput() {
   return document.getElementById(barcodeWidthInputId);
 }
-export function getBarcodeWidthDisplay() {
-  return document.getElementById(barcodeWidthDisplayId);
-}
 
 // ################# HEIGHT INPUT ################
 export function getBarcodeHeightInput() {
   return document.getElementById(barcodeHeightInputId);
 }
-export function getBarcodeHeightDisplay() {
-  return document.getElementById(barcodeHeightDisplayId);
-}
 
 // ################ FONT SIZE INPUT ###############
 export function getBarcodeFontSizeInput() {
-  return document.getElementById(barcodeFontSizeInputId);
-}
-export function getBarcodeFontSizeDisplay() {
   return document.getElementById(barcodeFontSizeInputId);
 }
 
@@ -87,4 +81,14 @@ export function getBarcodeFontDisplayInput() {
 // ############# COPY BARCODE MESSAGE ############
 export function getCopyBarcodeMessage() {
   return document.querySelector(".copy-message-container > div");
+}
+
+// #############  SECONDARY COLOR INPUT ###########
+export function getBarcodePrimaryColorInput() {
+  return document.getElementById(barcodePrimaryColorInputId);
+}
+
+// ################ PRIMARY COLOR INPUT ##############
+export function getBarcodeSecondaryColorInput() {
+  return document.getElementById(barcodeSecondaryColorInputId);
 }

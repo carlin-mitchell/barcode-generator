@@ -1,7 +1,6 @@
 // COMPONENT IMPORTS
-import { Div, Input } from "../_elements/Elements";
+import { Div } from "../_elements/Elements";
 import Barcode from "./Barcode";
-import BarcodeTextInput, { barcodeTextInputId } from "./BarcodeTextInput";
 import BarcodeForm from "./BarcodeForm";
 
 import GenerateButton from "./GenerateButton";
