@@ -3,7 +3,7 @@ export const barcodeConfig = {
     starting: 1,
     min: 1,
     max: 10,
-    step: 1,
+    step: 0.1,
   },
   height: {
     starting: 50,
@@ -21,7 +21,13 @@ export const barcodeConfig = {
     starting: true,
   },
   margin: {
-    starting: 10,
+    starting: {
+      margin: 0,
+      left: 0,
+      right: 0,
+      top: 0,
+      bottom: 10,
+    },
   },
   textInput: {
     starting: "This is only a test",

@@ -26,7 +26,7 @@ export function generateBarcode(options) {
   const height = getInputValue(getBarcodeHeightInput());
   const fontSize = getInputValue(getBarcodeFontSizeInput());
   const displayValue = getBarcodeFontDisplayInput().checked;
-  const margin = barcodeConfig.margin.starting;
+  const { left, right, top, bottom, margin } = barcodeConfig.margin.starting;
   JsBarcode("#barcode", content, {
     ...options,
     width,
@@ -34,6 +34,7 @@ export function generateBarcode(options) {
     fontSize,
     displayValue,
     margin,
+    marginBottom: bottom,
   });
 }
 export async function copyBarcode(src) {

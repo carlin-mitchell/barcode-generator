@@ -21,7 +21,7 @@ export function applyWindowListeners() {
     //
   });
   window.onload = () => {
-    updateBarcodeWidthDisplay(getInputValue(getBarcodeWidthInput()));
+    // updateBarcodeWidthDisplay(getInputValue(getBarcodeWidthInput()));
     generateBarcode();
   };
 }

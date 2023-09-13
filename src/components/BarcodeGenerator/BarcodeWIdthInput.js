@@ -1,5 +1,5 @@
 // COMPONENT IMPORTS
-import { Div, Input, Label, Span } from "../_elements/Elements";
+import { Div, Input, Label, Span, Option, Select } from "../_elements/Elements";
 
 import { v4 as uuidv4 } from "uuid";
 import { updateBarcodeWidthDisplay } from "./ui";
@@ -17,35 +17,47 @@ export const barcodeWidthInputId = uuidv4();
 export const barcodeWidthDisplayId = `barcode-width-display-${barcodeWidthInputId}`;
 
 function handleInput() {
-  const width = getInputValue(getBarcodeWidthInput());
-  updateBarcodeWidthDisplay(width);
   debounce(generateBarcode());
 }
+
+const options = [
+  { name: "normal", value: 1 },
+  { name: "wide", value: 2 },
+];
 
 const BarcodeWidthInput = () => {
   //
 
   const parentElement = Div({}, [
     Label({
-      innerHTML: `Width: ${Span({ id: barcodeWidthDisplayId }).outerHTML}`,
+      innerHTML: `Width: ${Span({ for: barcodeWidthDisplayId }).outerHTML}`,
     }),
-    Input(
+    Select(
       {
         id: barcodeWidthInputId,
-        type: "range",
-        innerText: ``,
-        className: ``,
-        min: barcodeConfig.width.min,
-        max: barcodeConfig.width.max,
-        step: barcodeConfig.width.step,
-        value: barcodeConfig.width.starting,
         oninput() {
           handleInput();
         },
       },
-      // add child elements to the array below
-      []
+      [...options.map((o) => Option({ innerText: o.name, value: o.value }))]
     ),
+    // Input(
+    //   {
+    //     id: barcodeWidthInputId,
+    //     type: "range",
+    //     innerText: ``,
+    //     className: ``,
+    //     min: barcodeConfig.width.min,
+    //     max: barcodeConfig.width.max,
+    //     step: barcodeConfig.width.step,
+    //     value: barcodeConfig.width.starting,
+    //     oninput() {
+    //       handleInput();
+    //     },
+    //   },
+    //   // add child elements to the array below
+    //   []
+    // ),
   ]);
   return parentElement;
 };
