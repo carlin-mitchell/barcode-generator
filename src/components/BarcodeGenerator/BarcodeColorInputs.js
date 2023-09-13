@@ -6,14 +6,24 @@ import { v4 as uuidv4 } from "uuid";
 import {
   generateBarcode,
   getBarcodePrimaryColorInput,
+  getBarcodePrimaryColorPreset,
   getBarcodeSecondaryColorInput,
+  getBarcodeSecondaryColorPreset,
 } from "./logic";
 import { barcodeConfig } from "./config";
 // LOGIC IMPORTS
 //
 
 // COMPONENT METHODS
-function handleColorInput(e) {
+
+function handlePrimaryColorInput() {
+  const preset = getBarcodePrimaryColorPreset();
+  preset.selected = true;
+  debounce(generateBarcode());
+}
+function handleSecondaryColorInput() {
+  const preset = getBarcodeSecondaryColorPreset();
+  preset.selected = true;
   debounce(generateBarcode());
 }
 
@@ -51,7 +61,7 @@ export const BarcodePrimaryColorInput = () => {
         id: barcodePrimaryColorInputId,
         value: barcodeConfig.primaryColor.starting,
         oninput() {
-          handleColorInput();
+          handlePrimaryColorInput();
         },
       }),
       Div({}, [
@@ -69,6 +79,11 @@ export const BarcodePrimaryColorInput = () => {
             ...presetOptions.map((o) =>
               Option({ innerText: o.name, value: o.value })
             ),
+            Option({
+              innerText: "Custom",
+              value: undefined,
+              id: `custom-preset-${barcodePrimaryColorInputId}`,
+            }),
           ]
         ),
       ]),
@@ -93,7 +108,7 @@ export const BarcodeSecondaryColorInput = () => {
         id: barcodeSecondaryColorInputId,
         value: barcodeConfig.secondaryColor.starting,
         oninput() {
-          handleColorInput();
+          handleSecondaryColorInput();
         },
       }),
       Div({}, [
@@ -111,6 +126,11 @@ export const BarcodeSecondaryColorInput = () => {
             ...presetOptions.map((o) =>
               Option({ innerText: o.name, value: o.value })
             ),
+            Option({
+              innerText: "Custom",
+              value: undefined,
+              id: `custom-preset-${barcodeSecondaryColorInputId}`,
+            }),
           ]
         ),
       ]),

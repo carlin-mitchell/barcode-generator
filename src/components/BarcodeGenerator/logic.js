@@ -88,7 +88,17 @@ export function getBarcodePrimaryColorInput() {
   return document.getElementById(barcodePrimaryColorInputId);
 }
 
+export function getBarcodePrimaryColorPreset() {
+  return document.getElementById(`custom-preset-${barcodePrimaryColorInputId}`);
+}
+
 // ################ PRIMARY COLOR INPUT ##############
 export function getBarcodeSecondaryColorInput() {
   return document.getElementById(barcodeSecondaryColorInputId);
+}
+
+export function getBarcodeSecondaryColorPreset() {
+  return document.getElementById(
+    `custom-preset-${barcodeSecondaryColorInputId}`
+  );
 }
