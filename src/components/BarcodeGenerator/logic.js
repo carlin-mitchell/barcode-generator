@@ -35,6 +35,13 @@ export function generateBarcode(options) {
     margin,
   });
 }
+export async function copyBarcode(src) {
+  const barcode = document.querySelector("#barcode");
+  const data = await fetch(barcode.src);
+  const blob = await data.blob();
+  await navigator.clipboard.write([new ClipboardItem({ "image/png": blob })]);
+}
+
 // ################# TEXT INPUT #################
 export function getBarcodeTextInput() {
   return document.getElementById(barcodeTextInputId);

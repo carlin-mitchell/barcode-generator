@@ -1,6 +1,12 @@
 .barcode-generator {
   img {
-    // border: 1px dotted gray;
+    cursor: pointer;
+    &:hover {
+      scale: 1.01;
+    }
+    &:active {
+      scale: 1;
+    }
   }
 }
 
