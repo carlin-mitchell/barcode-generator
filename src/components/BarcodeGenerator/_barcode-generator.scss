@@ -59,7 +59,7 @@ $grid-gap: 5px;
   justify-self: center;
   display: grid;
   gap: $grid-gap * 2;
-  width: 30rem;
+  max-width: 30rem;
   input:not(input[type="checkbox"]),
   select {
     width: 100%;
