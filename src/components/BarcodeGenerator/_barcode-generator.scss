@@ -2,14 +2,15 @@ $grid-gap: 5px;
 
 .barcode-generator {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(30rem, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
   height: max-content;
-  justify-content: center;
+  align-items: center;
+  gap: $grid-gap * 4;
 }
 
 .barcode-container {
   justify-self: center;
-  margin-top: 20px;
+  height: 100%;
   width: 100%;
   border: 2px dotted gray;
   width: max-content;
@@ -59,7 +60,7 @@ $grid-gap: 5px;
   justify-self: center;
   display: grid;
   gap: $grid-gap * 2;
-  max-width: 30rem;
+  width: 100%;
   input:not(input[type="checkbox"]),
   select {
     width: 100%;
