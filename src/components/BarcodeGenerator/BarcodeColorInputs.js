@@ -39,7 +39,7 @@ export const BarcodePrimaryColorInput = () => {
   //
 
   const parentElement = Div(
-    { innerText: ``, className: `` },
+    { innerText: ``, className: `vertical-stack` },
     // add child elements to the array below
     [
       Label({
@@ -81,7 +81,7 @@ export const BarcodeSecondaryColorInput = () => {
   //
 
   const parentElement = Div(
-    { innerText: ``, className: `` },
+    { innerText: ``, className: `vertical-stack` },
     // add child elements to the array below
     [
       Label({

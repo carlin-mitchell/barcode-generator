@@ -22,7 +22,7 @@ function handleInput() {
 const BarcodeHeightInput = () => {
   //
 
-  const parentElement = Div({}, [
+  const parentElement = Div({ className: `vertical-stack` }, [
     Label({
       for: barcodeHeightInputId,
       innerHTML: `Height: `,

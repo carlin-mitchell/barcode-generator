@@ -1,7 +1,6 @@
 // COMPONENT IMPORTS
 import { Div, Img } from "../_elements/Elements";
 import { copyBarcode } from "./logic";
-import { updateCopyMessage } from "./ui";
 
 // LOGIC IMPORTS
 //

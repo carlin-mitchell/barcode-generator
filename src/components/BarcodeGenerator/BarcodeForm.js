@@ -22,11 +22,11 @@ const BarcodeForm = () => {
   const parentElement = Form(
     {
       innerText: ``,
-      className: `barcode-form`,
+      className: `barcode-form `,
     },
     // add child elements to the array below
     [
-      Div({ className: "form-row-2" }, [
+      Div({ className: "form-row-2-auto" }, [
         BarcodeTextInput(),
         BarcodeFontDisplayInput(),
       ]),

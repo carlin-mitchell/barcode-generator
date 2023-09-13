@@ -21,7 +21,7 @@ function handleInput() {
 const BarcodeFontSizeInput = () => {
   //
 
-  const parentElement = Div({}, [
+  const parentElement = Div({ className: `vertical-stack` }, [
     Label({
       for: barcodeFontSizeInputId,
       innerHTML: `Font size: `,

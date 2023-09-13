@@ -25,7 +25,7 @@ const options = [
 const BarcodeWidthInput = () => {
   //
 
-  const parentElement = Div({}, [
+  const parentElement = Div({ className: `vertical-stack` }, [
     Label({
       for: barcodeWidthInputId,
       innerHTML: `Width: `,
