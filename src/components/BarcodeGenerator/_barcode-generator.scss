@@ -1,3 +1,5 @@
+@use "../../styles/breakpoints" as screen;
+
 $grid-gap: 5px;
 
 .barcode-generator {
@@ -72,7 +74,10 @@ $grid-gap: 5px;
   justify-self: center;
   display: grid;
   gap: $grid-gap * 2;
-  min-width: 15rem;
+  min-width: 30rem;
+  @include screen.md {
+    min-width: 100%;
+  }
   input:not(input[type="checkbox"]),
   select {
     width: 100%;
@@ -108,10 +113,6 @@ $grid-gap: 5px;
   display: grid;
   grid-template-rows: auto auto;
 }
-
-// .barcode-section {
-//   width: max-content;
-// }
 
 .small-font {
   font-size: 1rem * 0.75;
