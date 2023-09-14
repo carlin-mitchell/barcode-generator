@@ -48,7 +48,7 @@ export async function copyBarcode(src) {
     await navigator.clipboard.write([new ClipboardItem({ "image/png": blob })]);
     updateCopyMessage("copied!");
   } catch (e) {
-    updateCopyMessage("there was an issue, try again");
+    updateCopyMessage("there was an issue, try again.");
   }
 }
 

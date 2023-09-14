@@ -18,8 +18,8 @@ function handleInput() {
 }
 
 const options = [
-  { name: "normal", value: 1 },
-  { name: "wide", value: 2 },
+  { name: "Normal", value: 1 },
+  { name: "Wide", value: 2 },
 ];
 
 const BarcodeWidthInput = () => {

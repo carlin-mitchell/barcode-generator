@@ -2,12 +2,22 @@ $grid-gap: 5px;
 
 .barcode-generator {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
   height: max-content;
   align-items: center;
   gap: $grid-gap * 4;
 }
 
+.barcode-section {
+  justify-self: center;
+  & > div:last-child {
+    margin-top: $grid-gap;
+    text-align: center;
+    input {
+      margin-left: $grid-gap;
+    }
+  }
+}
 .barcode-container {
   justify-self: center;
   height: 100%;
@@ -32,7 +42,6 @@ $grid-gap: 5px;
     opacity: 0;
     display: grid;
     padding: 5px;
-    min-width: 10rem;
     cursor: pointer;
     &:hover {
       opacity: 0.9;
@@ -95,4 +104,16 @@ $grid-gap: 5px;
 .vertical-stack {
   display: grid;
   grid-template-rows: auto auto;
+}
+
+.barcode-section {
+  width: max-content;
+}
+
+.small-font {
+  font-size: 1rem * 0.75;
+}
+
+.display-none {
+  display: none !important;
 }
