@@ -1,5 +1,9 @@
 $grid-gap: 5px;
 
+input {
+  -webkit-appearance: none;
+}
+
 .barcode-generator {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
