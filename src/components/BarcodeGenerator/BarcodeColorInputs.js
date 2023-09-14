@@ -53,7 +53,7 @@ export const BarcodePrimaryColorInput = () => {
     // add child elements to the array below
     [
       Label({
-        innerText: `Primary color: `,
+        innerHTML: `Primary color <em>(must be lighter)</em>: `,
         for: barcodePrimaryColorInputId,
       }),
       Input({
@@ -100,7 +100,7 @@ export const BarcodeSecondaryColorInput = () => {
     // add child elements to the array below
     [
       Label({
-        innerText: `Secondary color: `,
+        innerHTML: `Secondary color <em>(must be darker)</em>: `,
         for: barcodeSecondaryColorInputId,
       }),
       Input({
