@@ -22,15 +22,15 @@ export const barcodeConfig = {
   },
   margin: {
     starting: {
-      margin: 5,
+      margin: 8,
       left: 0,
       right: 0,
       top: 0,
-      bottom: 5,
+      bottom: 0,
     },
   },
   textInput: {
-    starting: "Enter barcode message",
+    starting: "This is only a test",
   },
   secondaryColor: {
     starting: "#000000",

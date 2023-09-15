@@ -1,5 +1,5 @@
 // COMPONENT IMPORTS
-import { Div, Img } from "../_elements/Elements";
+import { Div, Img, Svg } from "../_elements/Elements";
 import { copyBarcode } from "./logic";
 
 // LOGIC IMPORTS

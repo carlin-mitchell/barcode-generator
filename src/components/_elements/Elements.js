@@ -134,6 +134,9 @@ export const Strong = (props, children) =>
 export const Span = (props, children) =>
   Element("span", props ? { ...props } : {}, children ? [...children] : []);
 
+export const Svg = (props, children) =>
+  Element("svg", props ? { ...props } : {}, children ? [...children] : []);
+
 export const Textarea = (props, children) =>
   Element("textarea", props ? { ...props } : {}, children ? [...children] : []);
 
