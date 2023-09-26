@@ -2,6 +2,7 @@
 import { generateTestContentArr } from "../../utils";
 import BarcodeGenerator from "../BarcodeGenerator/BarcodeGenerator";
 import { Main, Div } from "../_elements/Elements";
+import QrCodeGenerator from "../QrCodeGenerator/QrCodeGenerator";
 
 // LOGIC IMPORTS
 //
@@ -19,7 +20,7 @@ const MainSection = () => {
       className: "" + " " + otherClasses,
     },
     // add child elements to the array below
-    [BarcodeGenerator()]
+    [BarcodeGenerator(), QrCodeGenerator()]
   );
   return main;
 };

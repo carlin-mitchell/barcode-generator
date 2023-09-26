@@ -65,6 +65,9 @@ export const Button = (props, children) =>
 export const Br = (props, children) =>
   Element("br", props ? { ...props } : {}, children ? [...children] : []);
 
+export const Canvas = (props, children) =>
+  Element("canvas", props ? { ...props } : {}, children ? [...children] : []);
+
 export const Div = (props, children) =>
   Element("div", props ? { ...props } : {}, children ? [...children] : []);
 
