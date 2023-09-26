@@ -31,6 +31,7 @@ export function generateBarcode(options) {
   JsBarcode("#barcode", content, {
     ...options,
     font: "sans-serif",
+    fontOptions: "bold",
     width,
     height,
     fontSize,
