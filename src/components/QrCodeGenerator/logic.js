@@ -3,7 +3,7 @@ import { qrTextInputId } from "./QrCodeTextInput";
 
 export async function generateQr(content) {
     try {
-        const code = await QRCode.toDataURL(content);
+        const code = await QRCode.toCanvas(document.getElementById("qrcode"), content);
         console.log(code);
     } catch (err) {
         console.error(err);
