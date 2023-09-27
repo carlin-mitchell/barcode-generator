@@ -7,6 +7,7 @@ import {
   getBarcodeHeightInput,
 } from "../../components/BarcodeGenerator/logic";
 import { updateBarcodeWidthDisplay } from "../../components/BarcodeGenerator/ui";
+import { generateQr } from "../../components/QrCodeGenerator/logic";
 
 const breakPoints = {
   xs: 0,
@@ -23,5 +24,6 @@ export function applyWindowListeners() {
   window.onload = () => {
     // updateBarcodeWidthDisplay(getInputValue(getBarcodeWidthInput()));
     generateBarcode();
+    generateQr();
   };
 }
