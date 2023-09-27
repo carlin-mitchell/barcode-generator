@@ -1,6 +1,6 @@
 import JsBarcode from "jsbarcode";
 
-import { debounce, getInputValue } from "../../utils";
+import { debounce, getInputValue, setInputValue } from "../../utils";
 import {
   generateBarcode,
   getBarcodeWidthInput,
