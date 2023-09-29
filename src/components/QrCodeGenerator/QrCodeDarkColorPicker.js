@@ -14,23 +14,39 @@ function handleInput() {
   debounce(generateQr());
 }
 
-export const componentId = uuidv4();
+export const darkColorPickerId = uuidv4();
 export function getQrDarkColorInput() {
-  return document.getElementById(componentId);
+  return document.getElementById(darkColorPickerId);
+}
+
+export const darkOpacityPickerId = uuidv4();
+export function getQrDarkOpacityPicker() {
+  return document.getElementById(darkOpacityPickerId);
 }
 
 const QrDarkColorInput = () => {
-  const { labelText, startingValue } = config.inputs.darkColor;
-
+  const { darkColor, darkOpacity } = config.inputs;
   const parentElement = Div(
     { innerText: ``, className: `` },
     // add child elements to the array below
     [
-      Label({ for: componentId, innerText: labelText }),
+      Label({ for: darkColorPickerId, innerText: darkColor.labelText }),
       Input({
-        id: componentId,
+        id: darkColorPickerId,
         type: "color",
-        value: startingValue,
+        value: darkColor.startingValue,
+        oninput() {
+          handleInput();
+        },
+      }),
+      Label({ for: darkOpacityPickerId, innerText: darkOpacity.lableText }),
+      Input({
+        id: darkOpacityPickerId,
+        type: "number",
+        min: darkOpacity.min,
+        max: darkOpacity.max,
+        value: darkOpacity.startIngValue,
+        step: darkOpacity.step,
         oninput() {
           handleInput();
         },

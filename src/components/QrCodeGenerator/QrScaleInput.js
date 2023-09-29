@@ -1,5 +1,5 @@
 // COMPONENT IMPORTS
-import { Div, Label, Option, Select } from "../_elements/Elements";
+import { Div, Label, Option, Select, Input } from "../_elements/Elements";
 
 import { v4 as uuidv4 } from "uuid";
 
@@ -18,34 +18,44 @@ function handleInput() {
   debounce(generateQr());
 }
 
-const options = Array(config.inputs.scale.max)
-  .fill(null)
-  .map((e, i) => i + 1);
+// const options = Array(config.inputs.scale.max)
+//   .fill(null)
+//   .map((e, i) => i + 1);
 const qrScaleInput = () => {
-  //
+  const { startingValue, labelText, min, max } = config.inputs.scale;
 
   const parentElement = Div({ className: `vertical-stack` }, [
     Label({
       for: qrScaleInputId,
-      innerHTML: `Scale `,
+      innerHTML: labelText,
     }),
-    Select(
-      {
-        id: qrScaleInputId,
-        oninput() {
-          handleInput();
-        },
+    Input({
+      id: qrScaleInputId,
+      type: "number",
+      min,
+      max,
+      value: startingValue,
+      oninput() {
+        handleInput();
       },
-      [
-        ...options.map((o) =>
-          Option({
-            innerText: o,
-            value: o,
-            selected: o === config.inputs.scale.startingValue ? true : false,
-          })
-        ),
-      ]
-    ),
+    }),
+    // Select(
+    //   {
+    //     id: qrScaleInputId,
+    //     oninput() {
+    //       handleInput();
+    //     },
+    //   },
+    //   [
+    //     ...options.map((o) =>
+    //       Option({
+    //         innerText: o,
+    //         value: o,
+    //         selected: o === config.inputs.scale.startingValue ? true : false,
+    //       })
+    //     ),
+    //   ]
+    // ),
   ]);
   return parentElement;
 };

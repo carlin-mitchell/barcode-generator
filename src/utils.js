@@ -59,3 +59,11 @@ export function getInputValue(inputElement) {
 export function setInputValue(inputElement, value) {
   inputElement.value = value;
 }
+
+export function convertToHexString(num) {
+  return num.toString(16).toUpperCase();
+}
+
+export function convertAlphaChanelToHex(alpha) {
+  return convertToHexString(Math.round(alpha * 255));
+}

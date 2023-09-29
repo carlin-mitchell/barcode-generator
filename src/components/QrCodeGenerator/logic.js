@@ -1,9 +1,17 @@
 import QRCode from "qrcode";
 import { qrTextInputId } from "./QrCodeTextInput";
-import { getInputValue, setInputValue } from "../../utils";
+import {
+  convertAlphaChanelToHex,
+  convertToHexString,
+  getInputValue,
+  setInputValue,
+} from "../../utils";
 import { qrScaleInputId } from "./QrScaleInput";
 import { getQrLightColorInput } from "./QrCodeLightColorPicker";
-import { getQrDarkColorInput } from "./QrCodeDarkColorPicker";
+import {
+  getQrDarkColorInput,
+  getQrDarkOpacityPicker,
+} from "./QrCodeDarkColorPicker";
 
 export function generateQr() {
   const qrTextInput = getQrTextInput();
@@ -15,7 +23,9 @@ export function generateQr() {
     scale: getInputValue(getQrScaleInput()),
     color: {
       light: getInputValue(getQrLightColorInput()),
-      dark: getInputValue(getQrDarkColorInput()),
+      dark:
+        getInputValue(getQrDarkColorInput()) +
+        convertAlphaChanelToHex(getInputValue(getQrDarkOpacityPicker())),
     },
     errorCorrectionLevel: "H",
   };

@@ -6,6 +6,7 @@ export const config = {
     scale: {
       min: 1,
       max: 20,
+      labelText: "Scale",
       startingValue: 4,
     },
     lightColor: {
@@ -15,6 +16,13 @@ export const config = {
     darkColor: {
       labelText: "Dark Color",
       startingValue: "#000000",
+    },
+    darkOpacity: {
+      lableText: "Dark Color Opacity",
+      startIngValue: 1,
+      min: 0,
+      max: 1,
+      step: 0.01,
     },
   },
 };
