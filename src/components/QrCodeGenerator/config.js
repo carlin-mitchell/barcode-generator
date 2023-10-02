@@ -13,6 +13,13 @@ export const config = {
       labelText: "Light Color",
       startingValue: "#ffffff",
     },
+    lightOpacity: {
+      lableText: "Light Color Opacity",
+      startIngValue: 1,
+      min: 0,
+      max: 1,
+      step: 0.01,
+    },
     darkColor: {
       labelText: "Dark Color",
       startingValue: "#000000",

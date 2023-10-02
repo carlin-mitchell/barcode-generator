@@ -1,13 +1,11 @@
 import QRCode from "qrcode";
 import { qrTextInputId } from "./QrCodeTextInput";
-import {
-  convertAlphaChanelToHex,
-  convertToHexString,
-  getInputValue,
-  setInputValue,
-} from "../../utils";
+import { convertAlphaChanelToHex, getInputValue } from "../../utils";
 import { qrScaleInputId } from "./QrScaleInput";
-import { getQrLightColorInput } from "./QrCodeLightColorPicker";
+import {
+  getQrLightColorInput,
+  getQrLightOpacityInput,
+} from "./QrCodeLightColorPicker";
 import {
   getQrDarkColorInput,
   getQrDarkOpacityPicker,
@@ -22,7 +20,9 @@ export function generateQr() {
   const options = {
     scale: getInputValue(getQrScaleInput()),
     color: {
-      light: getInputValue(getQrLightColorInput()),
+      light:
+        getInputValue(getQrLightColorInput()) +
+        convertAlphaChanelToHex(getInputValue(getQrLightOpacityInput())),
       dark:
         getInputValue(getQrDarkColorInput()) +
         convertAlphaChanelToHex(getInputValue(getQrDarkOpacityPicker())),

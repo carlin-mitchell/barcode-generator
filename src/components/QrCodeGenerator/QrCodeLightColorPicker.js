@@ -14,27 +14,50 @@ function handleInput() {
   debounce(generateQr());
 }
 
-export const componentId = uuidv4();
+export const lightColorPickerId = uuidv4();
 export function getQrLightColorInput() {
-  return document.getElementById(componentId);
+  return document.getElementById(lightColorPickerId);
+}
+
+export const lightOpacityPickerId = uuidv4();
+export function getQrLightOpacityInput() {
+  return document.getElementById(lightOpacityPickerId);
 }
 
 const QrLightColorInput = () => {
-  const { startingValue, labelText } = config.inputs.lightColor;
+  const { lightColor, lightOpacity } = config.inputs;
 
   const parentElement = Div(
     { innerText: ``, className: `` },
     // add child elements to the array below
     [
-      Label({ for: componentId, innerText: labelText }),
-      Input({
-        id: componentId,
-        type: "color",
-        value: startingValue,
-        oninput() {
-          handleInput();
-        },
-      }),
+      //color
+      Div({}, [
+        Label({ for: lightColorPickerId, innerText: lightColor.labelText }),
+        Input({
+          id: lightColorPickerId,
+          type: "color",
+          value: lightColor.startingValue,
+          oninput() {
+            handleInput();
+          },
+        }),
+      ]),
+      //opacity
+      Div({}, [
+        Label({ for: lightOpacityPickerId, innerText: lightOpacity.lableText }),
+        Input({
+          id: lightOpacityPickerId,
+          type: "number",
+          min: lightOpacity.min,
+          max: lightOpacity.max,
+          value: lightOpacity.startIngValue,
+          step: lightOpacity.step,
+          oninput() {
+            handleInput();
+          },
+        }),
+      ]),
     ]
   );
   return parentElement;
