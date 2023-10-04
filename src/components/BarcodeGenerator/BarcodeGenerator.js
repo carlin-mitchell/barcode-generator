@@ -4,6 +4,8 @@ import Barcode from "./Barcode";
 import BarcodeEnableClickToCopy from "./BarcodeEnableClickToCopy";
 import BarcodeForm from "./BarcodeForm";
 
+import { v4 as uuidv4 } from "uuid";
+
 import GenerateButton from "./GenerateButton";
 // LOGIC IMPORTS
 //
@@ -13,11 +15,16 @@ import GenerateButton from "./GenerateButton";
 //   //
 // }
 
+export const barcodeSectionId = uuidv4();
+export function getBarcodeSection() {
+  return document.getElementById(barcodeSectionId);
+}
+
 const BarcodeGenerator = () => {
   //
 
   const parentElement = Div(
-    { innerText: ``, className: `barcode-generator` },
+    { id: barcodeSectionId, innerText: ``, className: `barcode-generator` },
     // add child elements to the array below
     [
       BarcodeForm(),

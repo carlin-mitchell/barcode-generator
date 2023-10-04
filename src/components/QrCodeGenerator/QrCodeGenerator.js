@@ -1,3 +1,5 @@
+import { v4 as uuidv4 } from "uuid";
+
 // COMPONENT IMPORTS
 import { Div, Canvas } from "../_elements/Elements";
 import QrLightColorInput from "./QrCodeLightColorPicker";
@@ -11,11 +13,20 @@ import QrGenerateForm from "./QrGenerateForm";
 //   //
 // }
 
+export const qrCodeSectionId = uuidv4();
+export function getQrCodeSection() {
+  return document.getElementById(qrCodeSectionId);
+}
+
 const QrCodeGenerator = () => {
   //
 
   const parentElement = Div(
-    { innerText: ``, className: `qr-section` },
+    {
+      id: qrCodeSectionId,
+      innerText: ``,
+      className: `qr-section display-none`,
+    },
     // add child elements to the array below
     [QrGenerateForm(), Canvas({ id: "qrcode" })]
   );

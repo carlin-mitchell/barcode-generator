@@ -119,6 +119,9 @@ export const Li = (props, children) =>
 export const Main = (props, children) =>
   Element("main", props ? { ...props } : {}, children ? [...children] : []);
 
+export const Nav = (props, children) =>
+  Element("nav", props ? { ...props } : {}, children ? [...children] : []);
+
 export const Ol = (props, children) =>
   Element("ol", props ? { ...props } : {}, children ? [...children] : []);
 
