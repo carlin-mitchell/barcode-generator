@@ -6,8 +6,11 @@
   grid-template-columns: 1fr;
   gap: 45px;
   height: max-content;
+  width: max-content;
+  justify-self: center;
   grid-template-rows: auto auto;
-  background-color: lighten(gray, 40);
+  background-color: lighten(gray, 30);
+  border-radius: $base-border-radius * 0.5;
   padding: $base-padding;
   input {
     width: 100%;
