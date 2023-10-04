@@ -24,7 +24,7 @@ function handleInput() {
 const qrMarginInput = () => {
   const { startingValue, labelText, min, max, step } = config.inputs.margin;
 
-  const parentElement = Div({}, [
+  const parentElement = Div({ className: `vertical-stack` }, [
     Label({
       for: qrMarginInputId,
       innerHTML: labelText,

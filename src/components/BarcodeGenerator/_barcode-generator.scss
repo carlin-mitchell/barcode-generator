@@ -112,6 +112,7 @@ $grid-gap: 5px;
 .vertical-stack {
   display: grid;
   grid-template-rows: auto auto;
+  align-content: center;
 }
 
 .small-font {

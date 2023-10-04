@@ -22,27 +22,21 @@ function handleSubmit(e) {
 
 const QrGenerateForm = () => {
   //
-  const parentElement = Div(
-    { innerText: ``, className: `` },
-    // add child elements to the array below
+  const parentElement = Form(
+    {
+      id: "qr-generate-form",
+      onsubmit(e) {
+        handleSubmit(e);
+      },
+    },
     [
-      Form(
-        {
-          id: "qr-generate-form",
-          onsubmit(e) {
-            handleSubmit(e);
-          },
-        },
-        [
-          QrGenerateTextInput(),
-          qrScaleInput(),
-          QrLightColorInput(),
-          QrDarkColorInput(),
-          qrMarginInput(),
-        ]
-      ),
+      QrGenerateTextInput(),
+      Div({ className: "form-row-2 " }, [qrScaleInput(), qrMarginInput()]),
+      Div({ className: `` }, [QrLightColorInput()]),
+      Div({ className: `` }, [QrDarkColorInput()]),
     ]
   );
+
   return parentElement;
 };
 

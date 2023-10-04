@@ -24,7 +24,7 @@ function handleInput() {
 const qrScaleInput = () => {
   const { startingValue, labelText, min, max } = config.inputs.scale;
 
-  const parentElement = Div({}, [
+  const parentElement = Div({ className: `vertical-stack` }, [
     Label({
       for: qrScaleInputId,
       innerHTML: labelText,

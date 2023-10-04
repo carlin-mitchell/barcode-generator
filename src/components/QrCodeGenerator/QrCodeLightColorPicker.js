@@ -28,11 +28,11 @@ const QrLightColorInput = () => {
   const { lightColor, lightOpacity } = config.inputs;
 
   const parentElement = Div(
-    { innerText: ``, className: `` },
+    { innerText: ``, className: `form-row-2` },
     // add child elements to the array below
     [
       //color
-      Div({}, [
+      Div({ className: `vertical-stack` }, [
         Label({ for: lightColorPickerId, innerText: lightColor.labelText }),
         Input({
           id: lightColorPickerId,
@@ -44,7 +44,7 @@ const QrLightColorInput = () => {
         }),
       ]),
       //opacity
-      Div({}, [
+      Div({ className: `vertical-stack` }, [
         Label({ for: lightOpacityPickerId, innerText: lightOpacity.lableText }),
         Input({
           id: lightOpacityPickerId,
