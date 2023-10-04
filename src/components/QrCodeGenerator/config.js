@@ -37,7 +37,7 @@ export const config = {
       startingValue: 1,
       min: 0,
       max: 10,
-      step: 0.25,
+      step: 0.1,
     },
   },
 };
