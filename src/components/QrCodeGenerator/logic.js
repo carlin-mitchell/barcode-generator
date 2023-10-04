@@ -10,6 +10,7 @@ import {
   getQrDarkColorInput,
   getQrDarkOpacityPicker,
 } from "./QrCodeDarkColorPicker";
+import { getQrMarginInput } from "./QrMarginInput";
 
 export function generateQr() {
   const qrTextInput = getQrTextInput();
@@ -28,6 +29,7 @@ export function generateQr() {
         convertAlphaChanelToHex(getInputValue(getQrDarkOpacityPicker())),
     },
     errorCorrectionLevel: "H",
+    margin: getInputValue(getQrMarginInput()),
   };
   try {
     QRCode.toCanvas(getQrCodeCanvas(), content, { ...options }, function (err) {

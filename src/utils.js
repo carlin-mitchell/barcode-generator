@@ -65,5 +65,6 @@ export function convertToHexString(num) {
 }
 
 export function convertAlphaChanelToHex(alpha) {
-  return convertToHexString(Math.round(alpha * 255));
+  const result = convertToHexString(Math.round(alpha * 255));
+  return result.length === 1 ? "0" + result : result;
 }

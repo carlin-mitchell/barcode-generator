@@ -5,6 +5,7 @@ import QrGenerateButton from "./QrCodeButton";
 import QrDarkColorInput from "./QrCodeDarkColorPicker";
 import QrLightColorInput from "./QrCodeLightColorPicker";
 import QrGenerateTextInput from "./QrCodeTextInput";
+import qrMarginInput from "./QrMarginInput";
 import qrScaleInput from "./QrScaleInput";
 import { generateQr, getQrTextInput } from "./logic";
 
@@ -37,6 +38,7 @@ const QrGenerateForm = () => {
           qrScaleInput(),
           QrLightColorInput(),
           QrDarkColorInput(),
+          qrMarginInput(),
         ]
       ),
     ]

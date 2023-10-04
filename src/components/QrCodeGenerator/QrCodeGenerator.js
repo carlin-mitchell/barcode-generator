@@ -15,7 +15,7 @@ const QrCodeGenerator = () => {
   //
 
   const parentElement = Div(
-    { innerText: ``, className: `` },
+    { innerText: ``, className: `qr-section` },
     // add child elements to the array below
     [QrGenerateForm(), Canvas({ id: "qrcode" })]
   );

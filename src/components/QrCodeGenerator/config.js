@@ -1,6 +1,7 @@
 export const config = {
   inputs: {
     text: {
+      labelText: "Content (url)",
       startingValue: "This is only a test",
     },
     scale: {
@@ -30,6 +31,13 @@ export const config = {
       min: 0,
       max: 1,
       step: 0.01,
+    },
+    margin: {
+      labelText: "Margin",
+      startingValue: 1,
+      min: 0,
+      max: 10,
+      step: 0.25,
     },
   },
 };

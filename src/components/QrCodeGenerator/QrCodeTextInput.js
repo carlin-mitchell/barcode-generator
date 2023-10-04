@@ -1,5 +1,5 @@
 // COMPONENT IMPORTS
-import { Div, Input } from "../_elements/Elements";
+import { Div, Input, Label } from "../_elements/Elements";
 import { v4 as uuidv4 } from "uuid";
 import { generateQr, getQrTextInput } from "./logic";
 import { getInputValue } from "../../utils";
@@ -22,6 +22,7 @@ const QrGenerateTextInput = () => {
     { innerText: ``, className: `` },
     // add child elements to the array below
     [
+      Label({ for: qrTextInputId, innerText: config.inputs.text.labelText }),
       Input({
         type: "text",
         id: qrTextInputId,
