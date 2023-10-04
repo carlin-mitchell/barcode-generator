@@ -29,7 +29,23 @@
     }
   }
 
-  canvas {
+  .qr-container {
     justify-self: center;
+    display: grid;
+    canvas {
+      justify-self: center;
+      cursor: pointer;
+      &:hover {
+        border: 3px solid black;
+      }
+      &:active {
+        border: none;
+      }
+    }
+    div {
+      text-align: center;
+      margin-top: 10px;
+      font-weight: bold;
+    }
   }
 }

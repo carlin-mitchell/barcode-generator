@@ -11,6 +11,7 @@ import {
   getQrDarkOpacityPicker,
 } from "./QrCodeDarkColorPicker";
 import { getQrMarginInput } from "./QrMarginInput";
+import { updateCopyMessage } from "./ui";
 
 export function generateQr() {
   const qrTextInput = getQrTextInput();
@@ -51,4 +52,21 @@ export function getQrCodeCanvas() {
 
 export function getQrScaleInput() {
   return document.getElementById(qrScaleInputId);
+}
+
+export async function copyQrToClipboard() {
+  const qrCode = document.getElementById("qrcode");
+  console.log(qrCode);
+  // const data = await fetch(qrCode.src);
+  try {
+    qrCode.toBlob((blob) =>
+      navigator.clipboard.write([new ClipboardItem({ "image/png": blob })])
+    );
+    updateCopyMessage("copied!");
+  } catch (e) {
+    updateCopyMessage(
+      "There was an issue, try agian. (this feature only works in google chrome)"
+    );
+    console.log(e);
+  }
 }

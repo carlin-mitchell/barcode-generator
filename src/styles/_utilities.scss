@@ -222,7 +222,7 @@ $utilities: (
   // ************************ VISIBILITY **************************
   "visibility":
     (
-      "prefix": "vis",
+      "prefix": "visibility",
       "values": (
         "default": visible,
         "hidden": hidden,
@@ -298,4 +298,8 @@ $utilities: (
 // ********************** Containers ************************
 .container {
   @extend .flex-layout;
+}
+
+.hidden {
+  visibility: hidden;
 }

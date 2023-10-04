@@ -42,7 +42,7 @@ export function generateBarcode(options) {
     background,
   });
 }
-export async function copyBarcode(src) {
+export async function copyBarcode() {
   const barcode = document.querySelector("#barcode");
   const data = await fetch(barcode.src);
   const blob = await data.blob();
