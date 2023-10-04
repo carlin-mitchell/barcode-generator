@@ -1,5 +1,5 @@
 // COMPONENT IMPORTS
-import { Element } from "../_elements/Elements";
+import { Element, Div } from "../_elements/Elements";
 import Nav from "../Nav/Nav";
 // LOGIC IMPORTS
 //
@@ -19,7 +19,7 @@ const Header = () => {
       id: "header",
       className: "header" + " " + otherClasses,
     },
-    [h1, Nav()]
+    [h1, Div({ className: `nav-container` }, [Nav()])]
   );
   return header;
 };

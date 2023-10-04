@@ -24,7 +24,7 @@ const Component = () => {
     {
       id: barcodeToggleId,
       innerText: `Barcode`,
-      className: ``,
+      className: `active`,
       onclick() {
         handleClick();
       },
